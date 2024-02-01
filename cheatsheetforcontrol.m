@@ -50,6 +50,12 @@ D =[0]
 % Get num,den from zeros poles k
 [num,den] = zp2tf(z,p,k)
 
+% Get Partial Fraction Expansion(PFE) of the given TF
+num = [1 2 1]
+den = [1 2 3 4 5]
+[r,p,k] = residue(num, den)
+% k is non empty only when OrdNum > OrdDen
+
 % Controllability and Observability
 num = [1 12];
 den = [1 4 4 2];
