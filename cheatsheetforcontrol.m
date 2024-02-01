@@ -92,3 +92,22 @@ zeros(5)
 % others
 vpa(pi,15)
 floor(6.2)
+
+% Responses of the Systems to the Given Inputs
+num = [1 3];
+den = [1 11 12 18];
+G = tf(num,den)
+figure (1)
+step(G)
+figure (2)
+impulse(G)
+
+% see and discuss the similarity between Fig1 and Fig3
+figure (3)
+den2 = [1 11 12 18 0];
+G2 = tf(num,den2)
+impulse(G2)
+
+% Below is the ramp
+figure (4)
+step(G2)
